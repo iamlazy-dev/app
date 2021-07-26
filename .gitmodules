@@ -1,0 +1,3 @@
+[submodule "web"]
+	path = packages/web
+	url = https://github.com/iamlazy-dev/app-web.git

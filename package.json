@@ -1,0 +1,12 @@
+{
+  "name": "iamlazy.dev-app",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "web": "yarn workspace @iamlazy.dev/web"
+  },
+  "license": "MIT"
+}
