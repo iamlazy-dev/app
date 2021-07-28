@@ -34,7 +34,8 @@
       "layout",
       "ui",
       "appModule",
-      "core"
+      "core",
+      "web"
     ],
     "windicss.sortOnSave": true,
   }
