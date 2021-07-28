@@ -1,0 +1,19 @@
+{
+  "name": "@iamlazy.dev/core",
+  "version": "0.0.1",
+  "main": "dist",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/faker": "^5.5.7",
+    "faker": "^5.5.3",
+    "typescript": "^4.3.5"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./ProductDatabase": {
+      "import": "./dist/ProductDatabase/index.js"
+    }
+  }
+}

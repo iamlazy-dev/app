@@ -1,22 +1,41 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "packages\\web"
-		}
-	],
-	"settings": {
-		"vetur.validation.template": false,
-		"vetur.format.enable": false,
-		"typescript.tsdk": "node_modules/typescript/lib",
-		"vetur.experimental.templateInterpolationService": true,
-		"conventionalCommits.scopes": [
-			"page",
-			"layout",
-			"ui"
-		],
-		"windicss.sortOnSave": true,
-	}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "packages\\core"
+    },
+    {
+      "path": "packages\\web"
+    },
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "packages": true,
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true
+    },
+    // language related
+    "typescript.preferences.quoteStyle": "single",
+    // extensions related
+    "vetur.validation.template": false,
+    "vetur.format.enable": false,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "vetur.experimental.templateInterpolationService": true,
+    "conventionalCommits.scopes": [
+      "page",
+      "layout",
+      "ui",
+      "appModule",
+      "core"
+    ],
+    "windicss.sortOnSave": true,
+  }
 }
