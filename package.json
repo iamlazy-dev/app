@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "web": "yarn workspace @iamlazy.dev/web",
-    "core": "yarn workspace @iamlazy.dev/core"
+    "core": "yarn workspace @iamlazy.dev/core",
+    "fns": "yarn workspace @iamlazy.dev/functions"
   },
   "license": "MIT"
 }
