@@ -1,2 +1,7 @@
+# all build files
 dist
 **/*.tsbuildinfo
+**/*.js
+**/*.d.ts
+!src/**/*.js
+!src/**/*.d.ts

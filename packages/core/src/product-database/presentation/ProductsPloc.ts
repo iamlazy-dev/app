@@ -2,11 +2,11 @@ import { DataError } from '../../shared/domain/DataError';
 import { Ploc } from '../../shared/presentation';
 import { Product } from '../domain/Model';
 import { GetProductsUseCase } from '../domain/usecases/GetProducts';
-import { productsInitialState, ProductsState } from '../presentation/State';
+import { productsInitialState, ProductsState } from '../presentation/ProductsState';
 
 export class ProductsPloc extends Ploc<ProductsState> {
   constructor(private getProductsUseCase: GetProductsUseCase) {
-    super(productsInitialState)
+    super(productsInitialState);
   }
 
   async find(columnName: keyof Product, query: string | number) {
@@ -19,7 +19,7 @@ export class ProductsPloc extends Ploc<ProductsState> {
         products,
         query: query.toString(),
       })
-    )
+    );
   }
 
   private handleError(query: string, error: DataError): ProductsState {
@@ -29,7 +29,14 @@ export class ProductsPloc extends Ploc<ProductsState> {
           ...productsInitialState,
           kind: 'Error',
           query,
-          errMsg: 'There\'s error, please try again!'
+          errMsg: 'There\'s something error, please try again!'
+        };
+      case 'SaveError':
+        return {
+          ...productsInitialState,
+          kind: 'Error',
+          query,
+          errMsg: 'There\'s something error on save, please try again!'
         };
     }
   }

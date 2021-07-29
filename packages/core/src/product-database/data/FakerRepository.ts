@@ -37,9 +37,30 @@ export class ProductFakerRepository implements ProductRepository {
           .includes(query.toString()))
 
         resolve(Either.right(result));
-      } catch (err) {
-        reject(Either.left({ kind: 'UnexpectedError', err }))
+      } catch (error) {
+        reject(Either.left({ kind: 'UnexpectedError', error }))
       }
     }, 3000))
+  }
+
+  async save(product: Product) {
+    return new Promise<Either<DataError, Boolean>>((resolve, reject) => setTimeout(() => {
+      try {
+        const saved = seed.some(({id}, i) => {
+          if (product.id === id) {
+            seed[i] = product;
+
+            return true;
+          }
+        });
+
+
+        resolve(saved
+          ? Either.right(saved)
+          : Either.left({ kind: 'UnexpectedError', error: new Error('Nothing changed!') }));
+      } catch (error) {
+        reject(Either.left({ kind: 'UnexpectedError', error }));
+      }
+    }, 1000));
   }
 }

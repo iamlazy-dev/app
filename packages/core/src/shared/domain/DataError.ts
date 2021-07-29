@@ -3,4 +3,9 @@ export interface UnexpectedError {
   error: Error;
 }
 
-export type DataError = UnexpectedError;
+export interface SaveError {
+  kind: 'SaveError';
+  error: Error;
+}
+
+export type DataError = UnexpectedError | SaveError;
